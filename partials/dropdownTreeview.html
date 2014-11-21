@@ -1,0 +1,31 @@
+ <div class="dropdown col-lg-4 customDropDown">
+        <button class="btn  col-lg-12 btn-default scoreDropDownBtn dropdown-toggle" type="button" id="dropdownMenu1"
+                data-toggle="dropdown" style="border-radius:1px">
+            <span class="pull-left" ng-if="selectedItem">{{selectedItem.name}}</span>
+            <span class="pull-left" ng-if="!selectedItem">Select Item</span>
+            <span class="caret pull-right" style="margin-top: 8px"></span>
+            </span>
+        </button>
+        <ul class="dropdown-menu custom-dropdown-menu col-lg-12" role="menu" aria-labelledby="dropdownMenu1">
+            <div ng-repeat="item in items"
+                 ng-include="'itemRenderer.html'"
+                 onLoad='index=0'>
+            </div>
+        </ul>
+    </div>
+
+
+<script type="text/ng-template" id="itemRenderer.html">
+    <li><a class="editable" ng-click='changeItem(item)' style="display: block"
+            data-ng-class="{'active':item.id==selectedItem.id}">
+        <span ng-repeat='i in getNumber(index*2) track by $index'>&nbsp </span>
+        {{item.name}}
+    </a>
+
+    </li>
+
+    <div ng-if='item.children.length' ng-init='index=index+1'>
+        <div ng-repeat="item in item.children" ng-include="'itemRenderer.html'" onLoad='index=index'>
+        </div>
+    </div>
+</script>

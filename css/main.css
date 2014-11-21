@@ -1,0 +1,22 @@
+.customDropDown{
+	margin: 30px
+}
+
+.custom-dropdown-menu{
+	width: calc( 100% - 30px );
+	border-radius: 1px !important;
+	left: 15px;
+}
+
+.open .dashboardDropDownBtn.dropdown-toggle {
+    background-color: #f8f8f8;
+    border: none !important;
+}
+
+.dropdown-menu li a.active {
+    background-color: #656d78;
+}
+
+.dropdown-menu li a:hover{
+    cursor: pointer;
+}

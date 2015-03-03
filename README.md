@@ -10,5 +10,5 @@ Usage :
 <ng-dropdown-treeview items='items'>
 </ng-dropdown-treeview>
 ```
-Pass your object into `items` attribute of `ng-dropdown-treeview` directive.
+Pass your object in `items` attribute of `ng-dropdown-treeview` directive.
 
